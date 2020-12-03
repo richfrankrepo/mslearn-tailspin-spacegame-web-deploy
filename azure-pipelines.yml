@@ -135,7 +135,7 @@ stages:
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
   - job: RunLoadTests
     dependsOn: Deploy
-    displayName: 'Run load tests'
+    displayName: 'Run load tests.'
     pool:
       vmImage: 'ubuntu-18.04'
     variables:
@@ -146,7 +146,7 @@ stages:
         tar -xf apache-jmeter-$(jmeterVersion).tgz
       displayName: 'Install Apache JMeter'
     - script: apache-jmeter-$(jmeterVersion)/bin/./jmeter -n -t LoadTest.jmx -o Results.xml -Jhostname=$(STAGING_HOSTNAME)
-      displayName: 'Run Load tests'
+      displayName: 'Run Load tests.'
     - script: |
         sudo apt-get update
         sudo apt-get install xsltproc
