@@ -135,7 +135,7 @@ stages:
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
   - job: RunLoadTests
     dependsOn: Deploy
-    displayName: 'Run load tests'
+    displayName: 'Run load tests.'
     pool:
       vmImage: 'ubuntu-18.04'
     variables:
